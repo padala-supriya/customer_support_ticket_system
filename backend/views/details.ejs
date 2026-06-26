@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Ticket Details</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div>
+
+<h1>
+
+Ticket Details
+
+</h1>
+
+<h2>
+
+<%= ticket.title %>
+
+</h2>
+
+<p>
+
+<strong>Description :</strong>
+
+<%= ticket.desc %>
+
+</p>
+
+<p>
+
+<strong>Status :</strong>
+
+<%= ticket.status %>
+
+</p>
+
+<br>
+
+<a href="/resolve/<%= index %>">
+
+Resolve Ticket
+
+</a>
+
+<a href="/delete/<%= index %>">
+
+Delete Ticket
+
+</a>
+
+<a href="/">
+
+Back
+
+</a>
+
+</div>
+
+</body>
+
+</html>

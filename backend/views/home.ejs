@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Customer Support Ticket System</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <h1>Customer Support Ticket System</h1>
+
+  <form action="/add" method="POST">
+
+    <input
+        type="text"
+        name="title"
+        placeholder="Enter Ticket Title"
+        required>
+
+    <br><br>
+
+    <textarea
+        name="desc"
+        placeholder="Enter Description"
+        rows="5"
+        cols="40"
+        required></textarea>
+
+    <br><br>
+
+    <button>Add Ticket</button>
+
+</form>
+
+    <hr>
+
+    <% if(tickets.length == 0){ %>
+
+        <h3>No Tickets Available</h3>
+
+    <% } %>
+
+    <% tickets.forEach(function(ticket,index){ %>
+
+        <div>
+
+            <h2>
+
+                <%= ticket.title %>
+
+            </h2>
+
+            <p>
+
+                <strong>Description :</strong>
+
+                <%= ticket.desc %>
+
+            </p>
+
+            <p>
+
+                <strong>Status :</strong>
+
+                <%= ticket.status %>
+
+            </p>
+
+            <a href="/ticket/<%= index %>">
+
+                View
+
+            </a>
+
+            &nbsp;&nbsp;
+
+            <a href="/resolve/<%= index %>">
+
+                Resolve
+
+            </a>
+
+            &nbsp;&nbsp;
+
+            <a href="/delete/<%= index %>">
+
+                Delete
+
+            </a>
+
+            <hr>
+
+        </div>
+
+    <% }) %>
+
+</body>
+
+</html>
